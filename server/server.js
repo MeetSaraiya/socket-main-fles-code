@@ -60,6 +60,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("newMessage", (message) => {
+        console.log("message",message)
         if (!message || typeof message !== "string") {
             socket.emit("errorOccurred", { type: "INVALID_MESSAGE", message: "Message must be a string" });
             return;
